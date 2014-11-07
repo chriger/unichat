@@ -15,5 +15,6 @@ WebsocketRails::EventMap.describe do
   # Messages
   namespace :messages do
     subscribe :send, to: MessageController, with_method: :send
+    subscribe :deliver, to: MessageController, with_method: :deliver
   end
 end
