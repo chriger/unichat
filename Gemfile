@@ -38,5 +38,15 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Amqp gems
+# Amqp
 gem 'bunny', '>= 1.6.0'
+
+# Websockets
+gem 'websocket-rails'
+
+# Testing application
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+end
