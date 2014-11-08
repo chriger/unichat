@@ -42,7 +42,7 @@ gem 'spring',        group: :development
 gem 'bunny', '>= 1.6.0'
 
 # Websockets
-gem 'websocket-rails'
+gem 'websocket-rails', git: 'https://github.com/depili/websocket-rails.git', branch: 'testing_fix'
 
 # Testing application
 group :development, :test do

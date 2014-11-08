@@ -13,8 +13,11 @@ WebsocketRails::EventMap.describe do
   # The above will handle an event triggered on the client like `product.new`.
 
   # Messages
-  namespace :messages do
+  namespace :message do
     subscribe :send, to: MessageController, with_method: :send
-    subscribe :deliver, to: MessageController, with_method: :deliver
+  end
+
+  namespace :connection do
+    subscribe :ping, to: ConnectionController, with_method: :pong
   end
 end

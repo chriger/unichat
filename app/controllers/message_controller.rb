@@ -5,10 +5,8 @@ class MessageController < WebsocketRails::BaseController
   end
 
   def send
-
   end
 
   def deliver
-    send_message :deliver, { message: 'foobar' }
   end
 end

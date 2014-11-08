@@ -1,3 +1,18 @@
+GIT
+  remote: https://github.com/depili/websocket-rails.git
+  revision: 5b010567bc13ba759c6945709d84517762b60b6a
+  branch: testing_fix
+  specs:
+    websocket-rails (0.7.0)
+      em-synchrony
+      faye-websocket
+      hiredis
+      rack
+      rails
+      redis
+      redis-objects
+      thin
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -306,15 +321,6 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     websocket-driver (0.3.5)
-    websocket-rails (0.7.0)
-      em-synchrony
-      faye-websocket
-      hiredis
-      rack
-      rails
-      redis
-      redis-objects
-      thin
 
 PLATFORMS
   ruby
@@ -334,4 +340,4 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
-  websocket-rails
+  websocket-rails!
