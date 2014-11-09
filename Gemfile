@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Authentication
+gem 'devise'
 # Amqp
 gem 'bunny', '>= 1.6.0'
 
