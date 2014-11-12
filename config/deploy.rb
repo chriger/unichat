@@ -57,6 +57,14 @@ namespace :deploy do
     end
   end
 
+  task :start_websocket do
+    rake 'websocket_rails:start_server'
+  end
+
+  task :stop_websocket do
+    rake 'websocket_rails:stop_server'
+  end
+
   after :publishing, :restart
 
   after :restart, :clear_cache do
@@ -67,5 +75,8 @@ namespace :deploy do
       # end
     end
   end
+
+  after :restart, :stop_websocket
+  after :restart. :start_websocket
 
 end
