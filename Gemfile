@@ -52,3 +52,13 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'shoulda-matchers', require: false
 end
+
+# Deployment
+group :development do
+  gem 'capistrano', group: :development
+  gem 'capistrano-passenger', require: false
+  gem 'capistrano-rails',     require: false
+  gem 'capistrano-bundler',   require: false
+  gem 'capistrano-rvm',       require: false
+end
+
