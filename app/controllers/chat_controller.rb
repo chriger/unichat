@@ -3,7 +3,7 @@ class ChatController < WebsocketRails::BaseController
 
     trigger_success({message: "It works"})
     new_message = { message: message }
-    send_message('chat.proceed_message', new_message)
+    send_message :proceed_message, new_message, namespace: :chat
   end
 
   def get_messages
