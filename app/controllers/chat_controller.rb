@@ -1,6 +1,6 @@
 class ChatController < WebsocketRails::BaseController
   def send_message
-    trigger_success 'succeed'
+    trigger_success({message: "It works"})
   end
 
   def get_messages
