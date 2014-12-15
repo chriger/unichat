@@ -1,0 +1,1 @@
+AmqpConnection.connection

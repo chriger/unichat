@@ -8,16 +8,17 @@ class User < ActiveRecord::Base
 
   after_destroy :destory_message_queue
 
-  validate :name, :unique
+  validate :name, :public_key, uniqueness: true
 
 
   private
 
   def create_message_queue
+    AmqpQueue.create_by_id(id)
 
   end
 
   def destroy_message_queue
-
+    AmqpQueue.destroy_by_id(id)
   end
 end

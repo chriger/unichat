@@ -6,7 +6,7 @@ module AmqpConnection
 
   def self.channel
     if @channel.nil? || @channel.closed?
-      @channel = conncetion.create_channel
+      @channel = @conn.create_channel
       @channel.prefetch(1)
     end
 
