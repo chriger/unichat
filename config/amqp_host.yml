@@ -3,3 +3,9 @@ development:
   vhost: '/'
   user: 'guest'
   password: 'guest'
+
+production:
+  host: 'localhost'
+  vhost: '/'
+  user: 'guest'
+  password: 'guest'
