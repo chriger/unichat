@@ -7,4 +7,8 @@ class ChatController < WebsocketRails::BaseController
       trigger_failure( { message: 'failed to send message'})
     end
   end
+
+  def get_public_key
+    
+  end
 end
