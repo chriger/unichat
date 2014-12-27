@@ -82,5 +82,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mailer for devise
-  config.action_mailer.default_url_options = { host: 'http://vserver.mine.nu'}
+  config.action_mailer.default_url_options = { host: 'vserver.mine.nu'}
 end
