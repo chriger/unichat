@@ -83,4 +83,5 @@ Rails.application.configure do
 
   # Mailer for devise
   config.action_mailer.default_url_options = { host: 'vserver.mine.nu'}
+  config.action_mailer.delivery_method = :smtp
 end
