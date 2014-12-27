@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :confirmable
   before_create :generate_channel_key
 
+  before_save :do_not_confirm
+
   after_create :create_message_queue
 
   after_destroy :destory_message_queue
@@ -28,5 +30,9 @@ class User < ActiveRecord::Base
       key = SecureRandom.urlsafe_base64
     end while User.where(:channel_key => key).exists?
     self.channel_key = key
+  end
+
+  def do_not_confirm
+    self.skip_confirmation!
   end
 end
