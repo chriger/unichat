@@ -1,3 +1,0 @@
-class AmqpMessage < Struct
-
-end

@@ -15,10 +15,18 @@ WebsocketRails::EventMap.describe do
   # Messages
   namespace :chat do
     subscribe :send_message, to: ChatController, with_method: :send_message
-    subscribe :get_messages, to: ChatController, with_method: :get_messages
   end
 
   namespace :connection do
     subscribe :ping, to: ConnectionController, with_method: :pong
+  end
+
+  namespace :user do
+    subscribe :get_channel_key, to: AuthorizationController, with_method: :get_channel_key
+    subscribe :get_public_key, to: ChatController, with_method: :get_public_key
+  end
+
+  namespace :websocket_rails do
+    subscribe :subscribe_private, to: AuthorizationController, with_method: :authorize_user_channel
   end
 end
