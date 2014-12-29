@@ -7,6 +7,6 @@ development:
 production:
   host: 'localhost'
   vhost: '/'
-  continuation_timeout: 0
+  continuation_timeout: 20000
   user: 'unichat'
   password: 'abcd123'
