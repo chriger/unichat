@@ -6,7 +6,6 @@ class AmqpListener
 
   def subscribe
     @consumer = @queue.subscribe(block: true, manual_ack: true) do |delivery_info, properties, payload|
-      binding.pry
       from = properties[:headers]["from"]
       to = User.find(delivery_info.routing_key).name
       puts "From: #{from}"
