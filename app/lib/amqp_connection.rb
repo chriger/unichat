@@ -5,7 +5,6 @@ module AmqpConnection
   end
 
   def self.channel
-    connection
     if @channel.nil? || @channel.closed?
       @channel = @conn.create_channel
       @channel.prefetch(1)
@@ -17,8 +16,12 @@ module AmqpConnection
   private
 
   def self.connect
-    @conn = Bunny.new(host: configuration['host'], vhost: configuration['vhost'], user: configuration['user'], password: configuration['password'], continuation_timeout: configuration['continuation_timeout'])
-    @conn.start
+    @conn = Bunny.new(host: configuration['host'], vhost: configuration['vhost'], user: configuration['user'], password: configuration['password'], continuation_timeout: configuration['continuation_timeout']).tap do |connection|
+      connection.start
+      at_exit do
+        connection.close
+      end
+    end
   end
 
   def self.configuration
