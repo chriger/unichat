@@ -17,7 +17,7 @@ module AmqpConnection
   private
 
   def self.connect
-    @conn = Bunny.new(host: configuration['host'], vhost: configuration['vhost'], user: configuration['user'], password: configuration['password'])
+    @conn = Bunny.new(host: configuration['host'], vhost: configuration['vhost'], user: configuration['user'], password: configuration['password'], continuation_timeout: configuration['continuation_timeout'])
     @conn.start
   end
 
