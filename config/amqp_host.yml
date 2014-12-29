@@ -7,5 +7,6 @@ development:
 production:
   host: 'localhost'
   vhost: '/'
+  continuation_timeout: 10000
   user: 'guest'
   password: 'guest'
